@@ -1,0 +1,21 @@
+/* Specific Login Adjustments */
+.login-card {
+    border-color: rgba(255, 255, 255, 0.1); /* Slightly more subtle than signup */
+    /* display: none; */
+    /* visibility: hidden; */
+}
+
+.login-card .signup-submit-btn {
+    margin-top: 20px;
+}
+
+/* Ensure the backdrop transition is smooth */
+.modal-backdrop {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.switch-text{
+    text-align: center;
+}
+/* .input-group{
+    display: flex; flex-direction: column;
+} */

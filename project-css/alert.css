@@ -1,0 +1,83 @@
+.alert-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    pointer-events: none; /* Allows clicking things behind it when hidden */
+}
+
+.alert-card {
+    pointer-events: all;
+    background: #1a1d21;
+    min-width: 320px;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.alert-icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Status Colors */
+.alert-success .alert-icon-box { background: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+.alert-error .alert-icon-box { background: rgba(231, 76, 60, 0.1); color: #e74c3c; }
+.alert-warning .alert-icon-box { background: rgba(255, 159, 67, 0.1); color: #00f2fe; }
+
+.alert-content h4 { margin: 0; font-size: 1rem; color: white; }
+.alert-content p { margin: 5px 0 0; font-size: 0.85rem; color: #888; line-height: 1.4; }
+
+.alert-close-btn {
+    background: transparent;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: auto;
+    transition: 0.3s;
+}
+.alert-close-btn:hover { color: white; }
+
+/* Progress Bar */
+.alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.05);
+}
+#alert-progress-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--primary);
+}
+
+/* Mobile Tweak */
+@media (max-width: 500px) {
+    .alert-overlay {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    .alert-card { min-width: auto; width: 100%; }
+}

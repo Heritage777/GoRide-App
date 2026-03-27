@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoRïde | The Future of Mobility</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./project-css/signup.css">
+    <link rel="stylesheet" href="./project-css/login.css">
+    <link rel="stylesheet" href="./project-css/driver-onb.css">
+    <link rel="stylesheet" href="./project-css/landing.css">
+    <link rel="stylesheet" href="./project-css/pass-dash.css">
+    <link rel="stylesheet" href="./project-css/driver-dash.css">
+    <link rel="stylesheet" href="./project-css/profile.css">
+    <link rel="stylesheet" href="./project-css/settings.css">
+    <link rel="stylesheet" href="./project-css/alert.css">
+    <link rel="stylesheet" href="./project-css/prompt.css">
+    <link rel="stylesheet" href="./project-css/chat.css">
+    <link rel="stylesheet" href="./project-css/policies.css">
+    <!-- <link rel="stylesheet" href="./project-css/support.css"> -->
+    <link rel="stylesheet" href="./project-css/support.css">
+    <link rel="stylesheet" href="./project-css/forgot.css">
+    <link rel="stylesheet" href="./project-css/admin.css">
+    <link rel="stylesheet" href="./project-css/driver-signup.css">
+    <link rel="stylesheet" href="./project-css/wallet.css">
+    <link rel="stylesheet" href="./project-css/ridehistory.css">
+    <!-- <link rel="stylesheet" href="./project-css/pending.css"> -->
+    
+</head>
+<body >
+
+    <div class="blob blob-1"></div>
+
+  <nav class="navbar">
+    <div class="nav-left">
+        <a href="#" class="logo"><i>Go<span style="color: #00f2fe;">Rïde</span></i></a>
+        
+        <ul class="nav-menu">
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Locations <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-city"></i> Inter-state Travels</a>
+                    <a href="#"><i class="fas fa-road"></i> Intercity Travel</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Support <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="displayPage(support)"><i class="fas fa-life-ring"></i> Help Center</a>
+                    <a href="#" onclick="displayPage(support)"><i class="fas fa-shield-alt"></i> Safety Info</a>
+                    <a href="#" onclick="displayPage(support)"><i class="fas fa-undo"></i> Refund Policy</a>
+                    <a href="#" onclick="displayPage(support)"><i class="fas fa-headset"></i> Contact Us</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link">Legal <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="displayPage(policies)"><i class="fas fa-user-shield"></i> Privacy Policy</a>
+                    <a href="#" onclick="displayPage(policies)"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                    <a href="#" onclick="displayPage(policies)"><i class="fas fa-cookie-bite"></i> Cookie Policy</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="nav-right">
+        <button class="theme-toggle"><i class="fas fa-adjust" onclick="changeMode()"></i></button>
+        <button class="btn-primary btn" onclick="displayPage(loginPage)">Login</button>
+    </div>
+</nav>
+
+<div class="social-sidebar">
+    <a href="#" class="social-link fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-link tw"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="social-link ln"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="social-link ig"><i class="fab fa-instagram"></i></a>
+</div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <p style="color: var(--primary); letter-spacing: 3px; font-weight: 700; text-transform: uppercase;">Premium Ride Experience</p>
+            <h1>Your ride, <br><span id="typewriter"></span><span class="cursor">|</span></h1>
+            <p style="margin-bottom: 40px; font-size: 1.2rem; color: var(--text-dim);">Your pathway to a seamless transportation. Book, track, and arrive in style with our high-speed fleet.</p>
+            <div class="buttonHolder">
+                <a href="#" class="btn btn-primary" onclick="displayPage(signupModal)">Start Booking</a>
+                <a href="#" class="btn btn-outline" onclick="displayPage(driverSignup)">Become a Driver</a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <img src="second-bluecab-removebg-preview.png" alt="HeriGo Cab" class="cab-image">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <i class="fas fa-bolt"></i>
+            <h3>Instant Match</h3>
+            <p>Our algorithms connect you to the nearest available driver in under 10 seconds. No waiting, just riding.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-shield-virus"></i>
+            <h3>Safety First</h3>
+            <p>Every trip is monitored 24/7. With verified drivers and live trip sharing, your safety is our top priority.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-coins"></i>
+            <h3>Best Prices</h3>
+            <p>Smart simulated pricing ensures you get the most efficient routes for the lowest possible cost.</p>
+        </div>
+    </section>
+    <section class="interstate-section">
+    <div class="section-header">
+        <p class="label">Cross-State GoRïde</p>
+        <h2>Our Amazing Inter-State Travels</h2>
+    </div>
+
+    <div class="infinite-slider" data-direction="right">
+        <div class="slide-track">
+            <div class="state-card"><img src="https://i.pinimg.com/1200x/1b/cd/0d/1bcd0d09cf52264d20fc18fbbb26aac1.jpg"><div class="info"><h3>Oyo State</h3><p>Lagos → Ibadan</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/1200x/c5/c1/b5/c5c1b5deb39a7c5e6ce9e464aa1fa976.jpg"><div class="info"><h3>Abuja (FCT)</h3><p>Central Hub</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/736x/86/d4/96/86d496d1f4104d4f808fa15d9064c4bd.jpg"><div class="info"><h3>Rivers State</h3><p>Port Harcourt</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/736x/1b/db/46/1bdb4642723b600a7a9663ae99c68553.jpg"><div class="info"><h3>Edo State</h3><p>Benin City</p></div></div>
+            
+            <div class="state-card"><img src="https://i.pinimg.com/736x/64/50/11/645011276f291960ecf661bfb3088f98.jpg"><div class="info"><h3>Kaduna State</h3><p>Lagos → Ibadan</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/736x/5a/5c/f1/5a5cf1a74e017453b9395607e2269bae.jpg"><div class="info"><h3>Anambra (FCT)</h3><p>Central Hub</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/736x/e3/fc/97/e3fc972f1c567889055c814fc25d48a3.jpg"><div class="info"><h3>Osun State</h3><p>Port Harcourt</p></div></div>
+            <div class="state-card"><img src="https://i.pinimg.com/1200x/d4/89/78/d4897849dcb9c8a9820eb84d918f948b.jpg"><div class="info"><h3>Port-Harcourt State</h3><p>Benin City</p></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="cities-section">
+    <div class="section-header">
+        <h2>Explore Ibadan Neighborhoods</h2>
+    </div>
+    <div class="infinite-slider" data-direction="left">
+        <div class="slide-track-fast">
+            <div class="city-chip"><span>Bodija</span></div>
+            <div class="city-chip"><span>Oluyole</span></div>
+            <div class="city-chip"><span>Akala Express</span></div>
+            <div class="city-chip"><span>Dugbe</span></div>
+            <div class="city-chip"><span>Challenge</span></div>
+            <div class="city-chip"><span>Bodija</span></div>
+            <div class="city-chip"><span>Oluyole</span></div>
+            <div class="city-chip"><span>Akala Express</span></div>
+            <div class="city-chip"><span>Dugbe</span></div>
+            <div class="city-chip"><span>Challenge</span></div>
+        </div>
+    </div>
+</section>
+
+
+<section class="newsletter-section">
+    <div class="newsletter-container">
+        <div class="newsletter-image">
+            <img src="https://i.pinimg.com/736x/1c/44/71/1c4471d2cdb6653efbd20f605726b6f4.jpg" alt="Premium Ride">
+            <div class="image-overlay-text">
+                <span>Join 50k+ Riders</span>
+            </div>
+        </div>
+        <div class="newsletter-content">
+            <p class="label">Stay in the Loop</p>
+            <h2>Unlock Exclusive Ride Discounts</h2>
+            <p>Subscribe to our newsletter and be the first to receive promo codes, travel safety tips, and new route updates across Nigeria.</p>
+            
+            <form class="subscribe-form" onsubmit="return false;">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Enter your email address" id="newsLetterInput">
+                </div>
+                <button type="button" class="btn-primary" onclick="subscribeToNewsletter()">Subscribe <i class="fas fa-paper-plane"></i></button>
+            </form>
+            <small>No spam, we promise. Only pure GoRïde value.</small>
+        </div>
+    </div>
+</section>
+
+<section class="stats-creative-section">
+    <div class="background-glow"></div>
+    <div class="section-header">
+        <p class="label">Our Impact</p>
+        <h2>The Pulse of Nigerian Mobility</h2>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-car-side"></i></div>
+            <div class="stat-number">2.5M+</div>
+            <p>Kilometers Driven</p>
+            <div class="progress-line"><span style="width: 85%;"></span></div>
+        </div>
+
+        <div class="stat-card active">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <div class="stat-number">4.9/5</div>
+            <p>Average Rider Rating</p>
+            <div class="progress-line"><span style="width: 98%;"></span></div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-number">8min</div>
+            <p>Average Pickup Time</p>
+            <div class="progress-line"><span style="width: 70%;"></span></div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#00f2fe"><path d="M593.33-557.67 400.67-751.33 475-825.67l118.33 119.34 231.67-231 74.33 73-306 306.66ZM313.33-201l285 83L794-181l-52.33-52.33H581q-14.33 0-29.17-2.67-14.83-2.67-28.83-7.33l-95-28.34 21.33-66.66L547.67-306q13.66 4.33 36.83 5.5 23.17 1.17-3.5 1.17h94.67l-40.34-40.34-257-95.66h-65V-201ZM52-52v-475.67h323.33q9 0 18.34 1.17Q403-525.33 412-521l71.33 28.67L871.67-105 602.33-22l-289-83v53H52Zm92.33-91.33h76v-292h-76v292Zm765 77.66L851.67-10 18-845.67l55.67-55.66L909.33-65.67Z"/></svg></div>
+            <div class="stat-number">100%</div>
+            <p>Safety Verified</p>
+            <div class="progress-line"><span style="width: 100%;"></span></div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+<input type="checkbox" id="toggle-support" class="drawer-check">
+<input type="checkbox" id="toggle-legal" class="drawer-check"> -->
+
+<!-- <div class="drawer-overlay support-overlay">
+    <div class="drawer-content">
+        <div class="drawer-header">
+            <h2>Support Hub</h2>
+            <label for="toggle-support" class="close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <div class="drawer-body">
+            <section class="content-block">
+                <h3><i class="fas fa-circle-question"></i> Help Center</h3>
+                <p>Find answers to common questions about bookings, driver ratings, and app usage. Our knowledge base is available 24/7 to assist your journey.</p>
+            </section>
+
+            <section class="content-block">
+                <h3><i class="fas fa-shield-halved"></i> Safety Info</h3>
+                <p>Your safety is our priority. Every GoRïde trip is GPS-tracked, and our drivers undergo rigorous background checks and vehicle inspections.</p>
+            </section>
+
+            <section class="content-block">
+                <h3><i class="fas fa-money-bill-transfer"></i> Refund Policy</h3>
+                <p>Cancellations within 2 minutes are free. For later cancellations, a ₦500 fee applies. Refunds for overcharges are processed within 3-5 business days.</p>
+            </section>
+
+            <section class="content-block">
+                <h3><i class="fas fa-headset"></i> Contact Us</h3>
+                <p>Need direct help? Reach us at <strong>support@goride.com</strong> or call our Lagos hotline at <strong>+234 800 GORIDE</strong>.</p>
+            </section>
+        </div>
+    </div>
+</div> -->
+
+<!-- <div class="drawer-overlay legal-overlay">
+    <div class="drawer-content">
+        <div class="drawer-header">
+            <h2>Legal Center</h2>
+            <label for="toggle-legal" class="close-btn"><i class="fas fa-times"></i></label>
+        </div>
+        <div class="drawer-body">
+            <section class="content-block">
+                <h3>Privacy Policy</h3>
+                <p>We value your privacy. We only collect data necessary for ride matching and safety. We never sell your data to third-party advertisers.</p>
+            </section>
+
+            <section class="content-block">
+                <h3>Terms of Service</h3>
+                <p>By using GoRïde, you agree to treat drivers with respect and follow local transportation laws. Account sharing is strictly prohibited.</p>
+            </section>
+
+            <section class="content-block">
+                <h3>Cookie Policy</h3>
+                <p>We use essential cookies to keep you logged in and functional cookies to remember your favorite pickup locations in Ibadan and Lagos.</p>
+            </section>
+
+            <section class="content-block">
+                <h3>Compliance</h3>
+                <p>GoRïde is fully registered and compliant with the Lagos State Ministry of Transportation and Oyo State Road Transport guidelines.</p>
+            </section>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="logo">GoRïde</a>
+                <p>Redefining urban mobility through real-time simulation and cutting-edge technology.</p>
+                <div class="social-row">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Locations</h4>
+                <ul>
+                    <li>Inter-state Travels</li>
+                    <li>Intercity Travel</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+    <h4>Support</h4>
+    <ul>
+        <li><label for="toggle-support"  onclick="displayPage(support)">Help Center</label></li>
+        <li><label for="toggle-support"  onclick="displayPage(support)">Safety Info</label></li>
+        <li><label for="toggle-support"  onclick="displayPage(support)">Refund Policy</label></li>
+        <li><label for="toggle-support"  onclick="displayPage(support)">Contact Us</label></li>
+    </ul>
+</div>
+
+<div class="footer-links">
+    <h4>Legal</h4>
+    <ul>
+        <li><label for="toggle-legal"  onclick="displayPage(policies)">Privacy Policy</label></li>
+        <li><label for="toggle-legal"  onclick="displayPage(policies)">Terms of Service</label></li>
+        <li><label for="toggle-legal"  onclick="displayPage(policies)">Cookie Policy</label></li>
+    </ul>
+</div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; font-size: 0.9rem; color: var(--text-dim);">
+            &copy; 2026 GoRïde Technologies Inc. Crafted for the future of transportation.
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- signup -->
+     <div id="signup-modal" class="modal-backdrop hidden">
+    <div class="signup-card">
+        <button class="close-btn" onclick="removeCurrentDisplay(signupModal)"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#FFFFFF"><path d="m291-240-51-51 189-189-189-189 51-51 189 189 189-189 51 51-189 189 189 189-51 51-189-189-189 189Z"/></svg></button><br><br>
+        
+        <div class="signup-header">
+            <h2>Join <span>GoRïde</span></h2>
+            <p>Create your account and enjoy GoRïde</p>
+        </div>
+
+        <div class="role-toggle">
+            <div class="role-box active" id="role-pass" onclick="setRole('passenger')">
+                <i class="fas fa-user-friends"></i>
+                <span>Passenger</span>
+            </div>
+            <div class="role-box" id="role-drive" onclick="displayPage(becomeDriver())">
+                <i class="fas fa-steering-wheel"></i>
+                <i class="fas fa-car"></i>
+                <span>Driver</span>
+            </div>
+        </div>
+
+        <form id="signup-form">
+                <div class="input-group">
+                    <input type="text" id="signup-name" placeholder="Full Name" required>
+                </div>
+            
+            <div class="input-group">
+                <input type="email" id="signup-email" placeholder="Email" required>
+            </div>
+
+        <div class="input-group">
+        <input type="password" id="signup-pass" placeholder="Password" required>
+        <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+    </div>
+
+    <div class="input-group">
+        <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+        <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility()"></i>
+    </div>
+
+            <button type="button" id="signupButton" class="signup-submit-btn">
+                Register as <span id="submit-role-text">Passenger</span>
+            </button>
+        </form>
+
+        <p class="switch-text">Already have an account? <a href="#" onclick="displayPage(loginPage)">Log In</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- login -->
+<div id="login-modal" class="modal-backdrop hidden">
+    <div class="signup-card login-card"> <button class="close-btn" onclick="removeCurrentDisplay(loginPage)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+        
+        <div class="signup-header">
+            <h2>Welcome <span>Back</span></h2>
+            <p>Enter your details to access your dashboard</p>
+        </div>
+
+        <form id="login-form">
+            <center>
+            <div class="input-group">
+                <input type="email" id="login-email" placeholder="Email Address" >
+            </div>
+
+            <div class="input-group">
+            
+                <input type="password" id="login-pass" placeholder="Password" >
+            </div>
+            <a href="#" style="font-size: 0.7rem; color: var(--primary); text-decoration: none; margin-bottom: 5px;" onclick="displayPage(forgotPassword)">Forgot password?</a>
+
+            <button type="submit" class="signup-submit-btn" id="loginButton">
+                Log In to GoRïde
+                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#000000"><path d="M472-110v-118h260v-504H472v-118h260q49.7 0 83.85 34.15Q850-781.7 850-732v504q0 49.7-34.15 83.85Q781.7-110 732-110H472ZM369-264l-84-82 75-75H110v-118h250l-75-75 84-82 215 216-215 216Z"/></svg>
+            </button>
+            
+            <button type="submit" class="signup-submit-btn" id="googleButton">
+                <img src="google-logo-removebg-preview.png" alt="">
+                Continue with Google
+            </button>
+            </center>
+        </form>
+
+        <p class="switch-text">New to GoRïde? <a href="#" onclick="displayPage(displaySignup())">Create Account</a></p>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- forgot password -->
+ <div id="forgot-password-modal" class="modal-backdrop">
+    <div class="signup-card login-card"> 
+        <button class="close-btn" onclick="removeCurrentDisplay(forgotPassword)">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+        </button>
+        
+        <div class="signup-header">
+            <h2>Reset <span>Password</span></h2>
+            <p>Enter your email and we'll send you instructions to reset your password.</p>
+        </div>
+
+        <form id="forgot-password-form">
+            <center>
+                <div class="input-group">
+                    <input type="email" id="reset-email" placeholder="Email Address" >
+                </div>
+
+                <button type="submit" class="signup-submit-btn" id="resetPassword">
+                    Send Reset Link
+                </button>
+            </center>
+        </form>
+
+        <p class="switch-text">Remembered it? <a href="#" onclick="removeCurrentDisplay(forgotPassword)">Back to Login</a></p>
+    </div>
+</div>
+
+
+
+
+<!-- driver onboarding form xxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+ <section id="driver-onboarding-view" class="onboarding-container hidden">
+    <div class="onboarding-card">
+         <button type="button" class="cancel-onboarding" onclick="removeCurrentDisplay(driverSignup)">
+        <i class="fas fa-times"></i>
+    </button>
+        <div class="onboarding-header">
+            <h2>Driver <span>SignUp</span></h2>
+            <p>Complete your profile to start earning with GoRïde.</p>
+        </div>
+
+        <form id="driver-details-form">
+            <div class="form-section">
+                <h4><i class="fas fa-car"></i> Driver Details</h4>
+                <div class="input-row">
+                    <div class="input-group">
+                        <input type="text" id="driverFirstName" placeholder="First Name" >
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="driverLastName" placeholder="Last Name" >
+                    </div>
+                </div>
+                <div class="form-section">
+    <h4><i class="fas fa-lock"></i> Security</h4>
+     <div class="input-group password-container">
+        <input type="email" id="driverEmail" placeholder="Email" >
+    </div>
+    
+   <div class="input-group password-container" style="position: relative;">
+    <input type="password" id="driverPassword" placeholder="Password">
+    <i class="fas fa-eye toggle-password"></i>
+</div>
+
+<div class="input-group password-container" style="position: relative;">
+    <input type="password" id="driverConfirm" placeholder="Confirm Password">
+    <i class="fas fa-eye toggle-password"></i>
+</div>
+
+    <div class="terms-group">
+        <label class="custom-checkbox">
+            <input type="checkbox" id="dr-terms-check" >
+            <span class="checkmark"></span>
+            <span class="terms-text">I agree to the <a href="#" class="terms-link" id="dr-terms" onclick="displayPage(policies)">Terms & Conditions</a></span>
+        </label>
+    </div>
+</div>
+            </div>
+
+            <button type="submit" class="signup-submit-btn">Create Driver Account</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+<div id="passenger-dashboard" class="dash-container">
+    <aside class="side-panel">
+        <div class="side-top">
+            <div class="brand-sm">Go<span>Rïde</span></div>
+            
+            <div class="user-profile">
+                <div class="avatar-circle"></div>
+                <div class="user-info">
+                    <p class="u-name"></p>
+                    <p class="u-status"><span>Verified</span> <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="lime"><path d="M293-301.85 113.85-482l35.77-36.15 143 142L306.46-390l37.16 37.15-50.62 51Zm204 0L316.85-482 354-518.77l143 143 324-324L858.15-663 497-301.85ZM483.15-491l-36.77-37.15 172-172L655.15-663l-172 172Z"/></svg></p>
+                    <!-- <button class="confirm-btn">Confirm Booking</button> -->
+                     <button class="edit-profile-btn" onclick="displayChatBox()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#F19E39"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg>
+                         Message Driver
+                    </button>
+                    <button class="edit-profile-btn" onclick="displayProfile()">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </button>
+                </div>
+            </div>
+
+            <div class="booking-section">
+                <div class="search-box">
+                    <div class="search-row">
+                        <i class="fas fa-circle-dot pickup-dot"></i>
+                        <input type="text" placeholder="Current location">
+                    </div>
+                    <div class="route-line"></div>
+                    <div class="search-row">
+                        <i class="fas fa-location-arrow drop-dot"></i>
+                        <input type="text" id="destination" placeholder="Where to?">
+                    </div>
+                </div>
+
+             <div class="ride-category">
+    <p class="label">Choose Your Driver</p>
+    
+    <div id="available-drivers-list" class="driver-selection-grid">
+        <p style="color: #888; font-size: 0.8rem;">Select a destination to see drivers...</p>
+    </div>
+
+    <button class="confirm-btn" id="main-confirm-btn" onclick="confirmBooking()">Broadcast Request</button>
+</div>
+            </div>
+        </div>
+
+        <div class="side-bottom">
+            <button class="settings-btn" onclick="displayPage(settings)">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+            <button class="logout-link" onclick="initiateLogout()">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </aside>
+
+    <main class="map-view">
+        <div class="tracker-zone">
+            <div class="status-header">
+                <div class="pulse"></div>
+                <span id="live-text">Finding your driver...</span>
+                <span id="arrival-timer">ETA: <strong id="timer-seconds">45</strong>s</span>
+            </div>
+            
+            <div class="animation-track">
+                <div class="track-line"></div>
+                <div id="moving-car" class="car-container">
+                    <i class="fas fa-car-side"></i>
+                </div>
+                <div class="destination-flag">
+                    <i class="fas fa-flag-checkered"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-zone">
+            <div class="history-header">
+                <h3>Recent Rides</h3>
+                <button class="refresh-btn"><i class="fas fa-sync-alt"></i></button>
+            </div>
+            
+            <div class="table-container">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Location</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+ 
+
+<!-- driver dashboard -->
+ <!-- driver notification -->
+ 
+<div id="driverDashboard" class="gr-dash-container">
+   
+    <div class="gr-sidebar">
+        <div class="gr-logo">Go<span>Rïde</span></div>
+            
+        <div class="gr-profile">
+        <div id="userInitialsAvatar" class="gr-avatar-initials">--</div>
+        
+        <div class="gr-profile-info">
+            <h4 id="driverNameDisplay">Loading...</h4>
+            <p><i class="fas fa-star"></i> 4.98 Rating</p>
+        </div>
+        <button class="gr-chat-btn" onclick="displayPage(chatBox)"><i class="fas fa-comments"></i> Chat</button>
+    </div>
+
+        <nav class="gr-nav">
+            <div class="gr-nav-item active" onclick="popup('Already on dashboard', 'Enjoy GoRïde')">
+                <i class="fas fa-th-large"></i> <span>Dashboard</span>
+            </div>
+            <div class="gr-nav-item" onclick="displayHistory()">
+                <i class="fas fa-history"></i> <span>Ride History</span>
+            </div>
+            <div class="gr-nav-item" onclick="displayWallet()">
+                <i class="fas fa-wallet"></i> <span>Wallet</span>
+            </div>
+            <div class="gr-nav-item" onclick="displaySettings()">
+                <i class="fas fa-user-cog"></i> <span>Settings</span>
+            </div>
+            <div class="gr-nav-item gr-logout" onclick="initiateDriverLogout()">
+                <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+            </div>
+        </nav>
+    </div>
+
+    <div class="gr-viewport">
+        <div class="gr-header">
+            <div class="gr-notif">
+                <i class="fas fa-bell"></i>
+                <span class="gr-badge">3</span>
+            </div>
+        </div>
+
+        <div class="gr-content">
+            <div class="gr-stats-row">
+                <div class="gr-card">
+                    <p>Today's Earnings</p>
+                    <h2>₦0</h2>
+                    <span class="gr-trend">+12% vs yesterday</span>
+                </div>
+                <div class="gr-card">
+                    <p>Completed Trips</p>
+                    <h2>0</h2>
+                </div>
+                <div class="gr-card">
+                    <p>Acceptance Rate</p>
+                    <h2>N/A</h2>
+                </div>
+            </div>
+
+            <div class="gr-activity-grid">
+                <div class="gr-map-box">
+    <div class="gr-activity-header">
+        <h3><i class="fas fa-satellite-dish pulse"></i> Incoming Ride Requests</h3>
+    </div>
+    <div class="table-container">
+        <table class="gr-request-table">
+            <thead>
+                <tr>
+                    <th>Passenger</th>
+                    <th>Destination</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="driver-request-body">
+                <tr id="no-request-msg">
+                    <td colspan="4" style="text-align:center; padding: 40px; color: #666;">
+                        Waiting for new requests...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+                <div class="gr-demand-box">
+                    <h3>Live Demand</h3>
+                    <div class="gr-demand-item">
+                        <div class="gr-dot green"></div>
+                        <p>High demand in <strong>Ikeja</strong></p>
+                    </div>
+                    <div class="gr-demand-item">
+                        <div class="gr-dot blue"></div>
+                        <p>Bonus zone: +₦500 <strong>Lekki</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- driver onboarding -->
+ <div id="driverRegistration" class="driver-signup-wrapper">
+    <button type="button" class="cancel-onboarding" onclick="removeCurrentDisplay(driverRegistration)">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <aside class="driver-onboarding-content">
+        <div class="brand-logo">Go<span>Rïde</span> <small>Driver</small></div>
+        
+        <div class="hero-text">
+            <h1>Turn Your Miles <br>Into <span>Revenue</span>.</h1>
+            <p>Join Lagos's premier celestial ride network. Drive on your own terms, earn competitive rates, and be your own boss.</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Top Earnings</h3>
+                <p>Competitive commissions and weekly payouts directly to your account.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-clock"></i>
+                <h3>Flexible Hours</h3>
+                <p>You choose when you drive. Perfect for full-time or part-time income.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Driver Safety</h3>
+                <p>Real-time ride tracking and 24/7 support for your peace of mind.</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-percent"></i>
+                <h3>Driver Discounts</h3>
+                <p>Access exclusive fuel and maintenance discounts at partner stations.</p>
+            </div>
+        </div>
+
+        <div class="testimonial-mini">
+            <img src="https://ui-avatars.com/api/?name=Sam+D&background=00f2fe&color=fff" alt="Driver Sam">
+            <p>"GoRïde changed how I view driving. The tech is seamless, and the earnings are consistent. It’s the best choice I made this year." - Sam D., Premier Driver</p>
+        </div>
+    </aside>
+
+    <main class="driver-signup-form-container">
+        <div class="form-card">
+            <h2>Complete Your Application</h2>
+            <p>Complete the details below to complete your registration.</p>
+            
+            <form id="driverRegistrationForm">
+                <div class="form-group">
+                    <label>Full Legal Name</label>
+                    <input type="text" id="driverName" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="dr-phone" placeholder="+234..." required>
+                </div>
+                
+                <div class="form-row">  
+                    <div class="form-group">
+                        <label>Vehicle Model</label>
+                        <input type="text" id="dr-car-model" placeholder="Toyota Corolla" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Year</label>
+                        <input type="number" id="dr-car-year" placeholder="2018" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>License Plate Number</label>
+                    <input type="text" id="dr-plate" placeholder="LAG-123-AB" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Driver's License ID</label>
+                    <input type="text" id="dr-license-id" placeholder="ABC-12345-XYZ" required>
+                </div>
+
+                <div class="file-upload-zone">
+                    <label for="dr-license-img">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Upload License Photo</span>
+                        <small>Max file size: 5MB</small>
+                    </label>
+                    <input type="file" id="dr-license-img" accept="image/*" class="hidden-input">
+                </div>
+
+                <button type="button" class="driver-submit-btn" onclick="submitApplication()">Submit Application</button>
+                
+                <p class="form-footer">By submitting, you agree to our <a href="#">Driver Terms</a>.</p>
+            </form>
+        </div>
+    </main>
+</div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--profile page -->
+<div id="user-profile-page" class="dash-container hidden" style="display: none;">
+    <div class="profile-card"> <div class="profile-header"> <button class="back-btn" onclick="closeProfile()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h3>Account Settings</h3>
+            <div style="width: 40px;"></div> 
+        </div>
+
+        <div class="profile-body"> <div class="avatar-upload"> <div class="avatar-preview"> <img id="profile-img-display" src="https://i.pinimg.com/736x/d5/c6/a6/d5c6a66677b906ce1297968fca831715.jpg" alt="Profile">
+                    <label for="img-upload" class="upload-badge">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="img-upload" hidden accept="image/*">
+                </div>
+                <h2 id="profile-display-name">---</h2>
+                <span class="role-badge" id="profile-role">Passenger</span>
+            </div>
+
+            <div class="info-form"> <div class="input-group"> <label>Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="edit-name">
+                    </div>
+                </div>
+
+                <div class="input-group"> <label>Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="edit-email" readonly style="opacity: 0.6; cursor: not-allowed;">
+                    </div>
+                </div>
+
+                <div class="profile-stats"> <div class="p-stat">
+                        <span class="p-label">Total Rides</span>
+                        <span class="p-val" id="total-rides-count">0</span>
+                    </div>
+                    <div class="p-stat">
+                        <span class="p-label">Rating</span>
+                        <span class="p-val">5.0 <i class="fas fa-star" style="color:#ff9f43;"></i></span>
+                    </div>
+                </div>
+
+                <div class="profile-actions"> <button class="save-btn" onclick="saveProfileChanges()">
+                        Update Profile
+                    </button>
+                </div>
+
+                    <div class="security-zone"> 
+    <p class="security-label">Security & Account</p>
+    
+    <button class="sec-action-btn btn-reset" onclick="requestPasswordReset()">
+        <div class="btn-content">
+            <i class="fas fa-key"></i>
+            <span>Reset Password</span>
+        </div>
+        <i class="fas fa-chevron-right arrow-icon"></i>
+    </button>
+    
+    <button class="sec-action-btn btn-delete" onclick="confirmDeleteAccount()">
+        <div class="btn-content">
+            <i class="fas fa-user-slash"></i>
+            <span>Delete Account</span>
+        </div>
+        <i class="fas fa-exclamation-triangle warning-icon"></i>
+    </button>
+</div>
+
+                <button class="cancel-link-btn" onclick="closeProfile()">
+                    Cancel & Return
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- settings -->
+<div id="settings-page" class="dash-container hidden">
+    <div class="settings-card">
+        <div class="settings-header">
+            <button class="back-btn" onclick="displayPage(driverDashboard)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h3>Settings</h3>
+            <div style="width: 40px;"></div>
+        </div>
+
+        <div class="settings-body">
+            <div class="settings-section">
+                <h4>Preferences</h4>
+                
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <i class="fas fa-bell"></i>
+                        <div>
+                            <span>Push Notifications</span>
+                            <p>Get alerts for rides and promos</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked id="pref-notifications">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <i class="fas fa-moon"></i>
+                        <div>
+                            <span>Dark Mode</span>
+                            <p>Adjust the app's appearance</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked id="pref-darkmode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h4>Security</h4>
+                <button class="menu-action-btn" onclick="passwordReset()">
+                    <i class="fas fa-lock"></i>
+                    <span>Change Password</span>
+                    <i class="fas fa-angle-right"></i>
+                </button>
+                <button class="menu-action-btn" onclick="toggleTwoFactor()">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Two-Factor Authentication</span>
+                    <i class="fas fa-angle-right"></i>
+                </button>
+            </div>
+
+            <div class="settings-section">
+                <h4>Support</h4>
+                <button class="menu-action-btn" onclick="displayPage(support)">
+                    <i class="fas fa-circle-question"></i>
+                    <span>Help Center</span>
+                </button>
+                <button class="menu-action-btn" onclick="displayPage(policies)">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Terms of Service</span>
+                </button>
+            </div>
+
+            <div class="settings-section danger-zone">
+                <button class="delete-account-btn" onclick="confirmDeleteAccount()">
+                    <i class="fas fa-trash-can"></i>
+                    Delete Account
+                </button>
+            </div>
+        </div>
+
+        <div class="settings-footer">
+            <button class="confirm-btn" onclick="saveSettings()">Save Configuration</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- alert -->
+ <div id="custom-alert" class="alert-overlay hidden">
+    <div class="alert-card">
+        <div class="alert-icon-box" id="alert-icon-container">
+            <i id="alert-icon" class="fas fa-check-circle"></i>
+        </div>
+        <div class="alert-content">
+            <h4 id="alert-title">Success!</h4>
+            <p id="alert-message">Your ride has been booked successfully.</p>
+        </div>
+        <button class="alert-close-btn" onclick="closeAlert()">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="alert-progress">
+            <div id="alert-progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- prompt -->
+ <div id="custom-prompt" class="prompt-overlay hidden">
+    <div class="prompt-card">
+        <div class="prompt-illustration">
+            <div class="icon-circle">
+                <i id="prompt-icon" class="fas fa-question"></i>
+            </div>
+        </div>
+        <div class="prompt-text">
+            <h3 id="prompt-title">Exit GoRïde?</h3>
+            <p id="prompt-message">Are you sure you want to logout?</p>
+        </div>
+        <div class="prompt-buttons">
+            <button class="secondary-btn" onclick="cancelLogout()">No, Cancel</button>
+            <button class="primary-confirm-btn" id="prompt-confirm-action" onclick="confirmLogout()">Yes, Proceed</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- payment prompt -->
+<!-- <div id="payment-modal-wrapper" class="pp-overlay-hidden" style="display: none;">
+    <div class="pp-main-card">
+        <div class="pp-top-decoration">
+            <div class="pp-icon-frame">
+                <i class="fas fa-credit-card"></i>
+            </div>
+        </div>
+        <div class="pp-content-area">
+            <h3 id="pp-display-title">Verify Ride Fare</h3>
+            <p id="pp-display-message">Calculating distance...</p>
+        </div>
+        <div class="pp-action-row">
+            <button class="pp-btn-cancel" onclick="closePaymentPrompt()">Cancel</button>
+            <button class="pp-btn-confirm" id="pp-final-pay-btn">Proceed to Pay</button>
+        </div>
+    </div>
+</div>
+
+ -->
+
+
+
+
+<!-- chat page -->
+<div id="chat-container" class="chat-container">
+   <!-- Header -->
+   <header class="chat-header">
+       <div class="user-info">
+           <div class="avatar-wrapper">
+               <div id="chat-user-avatar" class="chat-initials-avatar">--</div>
+               <span class="status-indicator online"></span>
+           </div>
+           <div>
+               <h4 id="chat-header-name">Driver Name</h4>
+           </div>
+       </div>
+       <div class="header-actions">
+           <button class="icon-btn" onclick="removeCurrentDisplay(chatBox)">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+                   <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+               </svg>
+           </button>
+       </div>
+   </header>
+
+   <!-- Messages -->
+   <main class="chat-messages" id="chatBox">
+       <!-- Initial system message -->
+       <div class="message system">
+           <span>Trip started • 2:30 PM</span>
+       </div>
+   </main>
+
+   <!-- Footer -->
+   <footer class="chat-footer">
+       <div class="quick-replies">
+           <button onclick="sendQuick('I\'m outside')">I'm outside</button>
+           <button onclick="sendQuick('On my way')">On my way</button>
+           <button onclick="sendQuick('Where are you?')">Where are you?</button>
+       </div>
+       
+       <div class="input-wrapper">
+           <button class="attach-btn"><i class="fas fa-plus"></i></button>
+           <input type="text" id="messageInput" placeholder="Type a message...">
+           <button class="send-btn" id="sendBtn">
+               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                   <path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/>
+               </svg>
+           </button>
+       </div>
+   </footer>
+</div>
+
+
+
+
+
+<!-- policies -->
+<div id="legal-master-container" class="legal-drawer">
+    <div class="legal-overlay"></div>
+    <div class="legal-panel">
+        <div class="legal-header">
+            <h2>GoRïde Legal Center</h2>
+            <button class="cancel-btn" onclick="removeCurrentDisplay(policies)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+        </div>
+
+        <div class="legal-scroll-area">
+            <section class="legal-section">
+                <h3>Privacy Policy</h3>
+                <p>At GoRïde, we collect personal information such as your name, contact details, and precise GPS location to facilitate safe and efficient rides. We use industry-standard encryption to protect your data.</p>
+                <ul>
+                    <li><strong>Location Data:</strong> Collected even when the app is in the background during a trip for safety.</li>
+                    <li><strong>Data Sharing:</strong> Only shared with the assigned driver or emergency services.</li>
+                    <li><strong>Retention:</strong> Data is kept for the duration of your account activity plus legal statutory periods.</li>
+                </ul>
+            </section>
+
+            <hr class="legal-divider">
+
+            <section class="legal-section">
+                <h3>Cookie Policy</h3>
+                <p>We use cookies to enhance your experience. These are small text files stored on your device that help us remember your preferences, like your favorite pickup points in Ibadan or Lagos.</p>
+                <p>By using our platform, you consent to essential cookies used for security and functional cookies used for performance analytics.</p>
+            </section>
+
+            <hr class="legal-divider">
+
+            <section class="legal-section">
+                <h3>Detailed Terms of Service</h3>
+                <div class="long-text-box">
+                    <h4>1. Introduction & Eligibility</h4>
+                    <p>These terms constitute a legally binding agreement between you and GoRïde Technologies. You must be at least 18 years old and possess the legal authority to enter into this agreement to use our services.</p>
+
+                    <h4>2. Use of Services</h4>
+                    <p>The GoRïde platform is a marketplace connecting passengers with independent third-party drivers. GoRïde does not provide transportation services directly; we are a technology provider. You agree to use the service only for lawful purposes.</p>
+
+                    <h4>3. Fares, Tolls, and Payments</h4>
+                    <p>Fares are estimated at the time of booking but may vary based on actual route, traffic, and wait times. You are responsible for all tolls (e.g., Lekki-Epe Expressway tolls) and airport parking fees incurred during the trip.</p>
+
+                    <h4>4. User Conduct & Safety</h4>
+                    <p>A zero-tolerance policy is maintained for harassment, discrimination, or violence. Any report of such behavior will result in immediate account suspension. You agree to wear seatbelts and follow all local road safety regulations.</p>
+
+                    <h4>5. Limitation of Liability</h4>
+                    <p>To the maximum extent permitted by law, GoRïde shall not be liable for indirect, incidental, or consequential damages arising out of your use of the service. Our total liability is limited to the fare paid for the specific trip in question.</p>
+
+                    <h4>6. Termination</h4>
+                    <p>We reserve the right to deactivate any account for violations of these terms, including fraudulent payment activity or repeated low ratings from service providers.</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="legal-footer">
+            <label class="custom-checkbox">
+                <input type="checkbox" id="legal-agree-check">
+                <span class="box"></span>
+                I have read and fully agree to the Privacy Policy, Cookie Policy, and Terms of Service.
+            </label>
+            <div class="footer-btns">
+                <button class="btn-cancel-flat" onclick="closeLegal()">Decline</button>
+                <button class="btn-primary" id="accept-legal-btn">Accept & Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- support -->
+<div id="support-master-container" class="support-drawer">
+    <div class="support-overlay" onclick="closeSupport()"></div>
+    <div class="support-panel">
+        <div class="support-header">
+            <h2>GoRïde Support Hub</h2>
+            <button class="cancel-btn" onclick="removeCurrentDisplay(support)"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+        </div>
+
+        <div class="support-scroll-area">
+            <section class="support-section">
+                <div class="section-icon"><i class="fas fa-circle-question"></i></div>
+                <div class="section-text">
+                    <h3>Help Center</h3>
+                    <p>Find instant answers to frequently asked questions about account management, payment methods, and how to use the GoRïde app in Lagos and Ibadan.</p>
+                    <div class="faq-mini-list">
+                        <span><i class="fas fa-chevron-right"></i> How to book a ride?</span>
+                        <span><i class="fas fa-chevron-right"></i> Managing your GoRïde Wallet</span>
+                        <span><i class="fas fa-chevron-right"></i> Lost and Found items</span>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="support-divider">
+
+            <section class="support-section">
+                <div class="section-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F19E39"><path d="M480-680q17 0 28.5-11.5T520-720q0-17-11.5-28.5T480-760q-17 0-28.5 11.5T440-720q0 17 11.5 28.5T480-680Zm-40 320h80v-240h-80v240ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z"/></svg></div>
+                <div class="section-text">
+                    <h3>Safety Info</h3>
+                    <p>Your safety is our top priority. We implement multi-layered safety protocols to ensure peace of mind on every trip.</p>
+                    <div class="safety-grid">
+                        <div class="safety-item">
+                            <strong>Verified Drivers</strong>
+                            <p>Every driver undergoes a criminal background check.</p>
+                        </div>
+                        <div class="safety-item">
+                            <strong>24/7 Monitoring</strong>
+                            <p>All trips are GPS-tracked in real-time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="support-divider">
+
+            <section class="support-section">
+                <div class="section-icon"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F19E39"><path d="M480-40q-112 0-206-51T120-227v107H40v-240h240v80h-99q48 72 126.5 116T480-120q75 0 140.5-28.5t114-77q48.5-48.5 77-114T840-480h80q0 91-34.5 171T791-169q-60 60-140 94.5T480-40Zm-36-160v-52q-47-11-76.5-40.5T324-370l66-26q12 41 37.5 61.5T486-314q33 0 56.5-15.5T566-378q0-29-24.5-47T454-466q-59-21-86.5-50T340-592q0-41 28.5-74.5T446-710v-50h70v50q36 3 65.5 29t40.5 61l-64 26q-8-23-26-38.5T482-648q-35 0-53.5 15T410-592q0 26 23 41t83 35q72 26 96 61t24 77q0 29-10 51t-26.5 37.5Q583-274 561-264.5T514-250v50h-70ZM40-480q0-91 34.5-171T169-791q60-60 140-94.5T480-920q112 0 206 51t154 136v-107h80v240H680v-80h99q-48-72-126.5-116T480-840q-75 0-140.5 28.5t-114 77q-48.5 48.5-77 114T120-480H40Z"/></svg></div>
+                <div class="section-text">
+                    <h3>Refund Policy</h3>
+                    <p>We strive for fairness. If you were overcharged or a trip didn't happen as expected, you are eligible for a refund review.</p>
+                    <ul class="policy-list">
+                        <li>Cancellations within 2 minutes of booking are 100% free.</li>
+                        <li>Technical errors during payment are refunded within 3-5 business days.</li>
+                        <li>Refunds are credited back to your original payment method or GoRïde Wallet.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <hr class="support-divider">
+
+            <section class="support-section">
+                <div class="section-icon"><i class="fas fa-headset"></i></div>
+                <div class="section-text">
+                    <h3>Contact Us</h3>
+                    <p>Still need help? Our local support team is ready to assist you via multiple channels.</p>
+                    <div class="contact-actions">
+                        <a href="mailto:support@goride.com" class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Us</span>
+                        </a>
+                        <a href="tel:+234800GORIDE" class="contact-card">
+                            <i class="fas fa-phone"></i>
+                            <span>Call Support</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="support-footer">
+            <p>Our average response time is under 10 minutes.</p>
+            <button class="btn-primary btn-full" onclick="closeSupport()">Got It</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Wallet Page -->
+<div id="wallet-page" class="gr-wallet-full">
+    
+    <header class="wallet-header">
+        <div class="header-left">
+            <button class="back-btn" onclick=" displayPage(driverDashboard)">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+        <h1>Financial Overview</h1>
+        <div class="wallet-status">
+            <span class="status-text">Live Account</span>
+            <div class="wallet-status-dot"></div>
+        </div>
+    </header>
+
+    <div class="wallet-hero">
+        <div class="balance-main">
+            <p>Total Withdrawable Balance</p>
+            <h2 id="wallet-total-balance">₦0</h2>
+            <div class="wallet-actions">
+                <button class="withdraw-btn" onclick="popup('This service is not available', 'Service will be available soon')"><i class="fas fa-university"></i> Withdraw to Bank</button>
+                <button class="history-btn" onclick="printStatement()"><i class="fas fa-file-invoice-dollar"></i> Statement</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="earnings-row">
+        <div class="earn-card today">
+            <div class="card-icon"><i class="fas fa-bolt"></i></div>
+            <div class="card-data">
+                <span>Today's Revenue</span>
+                <h3 id="earn-today">₦0</h3>
+            </div>
+        </div>
+        <div class="earn-card week">
+            <div class="card-icon"><i class="fas fa-calendar-week"></i></div>
+            <div class="card-data">
+                <span>Weekly Earnings</span>
+                <h3 id="earn-week">₦0</h3>
+            </div>
+        </div>
+        <div class="earn-card month">
+            <div class="card-icon"><i class="fas fa-globe"></i></div>
+            <div class="card-data">
+                <span>Monthly Total</span>
+                <h3 id="earn-month">₦0</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="wallet-bottom-grid">
+        <div class="transaction-container">
+            <div class="section-header">
+                <h3>Recent Transactions</h3>
+                <button class="view-all-btn">View All History</button>
+            </div>
+            
+            <div id="wallet-transaction-list" class="transaction-list">
+                <div class="empty-state">
+                    <i class="fas fa-receipt"></i>
+                    <p>No recent transactions to display.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- Ride History Section -->
+<div id="rideHistoryPage" class="gr-dash-container">
+    <div class="gr-sidebar">
+        <nav class="gr-nav">
+            <div class="gr-nav-item back-btn" onclick=" displayPage(driverDashboard)">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+        </nav>
+    </div>
+
+    <div class="gr-viewport">
+        <div class="gr-header">
+            <h3>Ride History</h3>
+        </div>
+
+        <div class="gr-content">
+            <div class="gr-card history-container">
+                <div class="table-container">
+                    <table class="gr-request-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Passenger</th>
+                                <th>Route</th>
+                                <th>Fare</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table-body">
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+
+</body>
+</html>
+<script src="./project-js/firebase-config.js"></script>
+<script src="./project-js/landing.js"></script>
+<script src="./project-js/admin.js"></script>
+<script src="./project-js/dashboard.js"></script>
+<script src="./project-js/login.js"></script>
+<script src="./project-js/signup.js"></script>

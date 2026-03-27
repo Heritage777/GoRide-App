@@ -1,0 +1,331 @@
+/* --- GLOBAL VARIABLES & THEME --- */
+:root {
+    --primary: #00f2fe;
+    --dark: #0f1113;
+    --card-bg: #1a1d21;
+    --accent: #f19e39;
+    --success: #00ff00;
+    --danger: #ff4757;
+    --car-progress: 0%; /* Updated by JS */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- MAIN LAYOUT STRATEGY --- */
+.dash-container {
+    display: grid;
+    grid-template-columns: 320px 1fr; /* Fixed Sidebar width */
+    height: 100vh;
+    width: 100vw;
+    background: var(--dark);
+    position: fixed;
+    top: 0; 
+    left: 0;
+    overflow: auto; /* Changed from hidden to auto so content is scrollable */
+    z-index: 9999;
+}
+
+/* --- SIDEBAR (Left Panel) --- */
+.side-panel {
+    background: var(--dark);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Show all content without hiding */
+    padding: 25px;
+    height: auto; /* Changed from 100vh to auto */
+    overflow-y: auto;
+}
+
+.side-panel::-webkit-scrollbar { width: 0; }
+
+.brand-sm { font-size: 1.4rem; font-weight: 800; margin-bottom: 25px; color: white; }
+.brand-sm span { color: var(--primary); }
+
+/* User Profile Section */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.avatar-circle {
+    width: 42px; 
+    height: 42px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    color: black; 
+    font-weight: bold;
+    flex-shrink: 0; 
+    aspect-ratio: 1 / 1; 
+}
+.user-info .u-name { font-size: 0.95rem; font-weight: 600; color: white; }
+.u-status { 
+    display: flex; align-items: center; gap: 4px;
+    font-size: 0.75rem; color: var(--success); font-weight: bold;
+}
+
+/* Booking & Driver List */
+.search-box {
+    background: var(--card-bg);
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.search-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.search-row input { 
+    font-size: 0.85rem; color: white; background: none; 
+    border: none; outline: none; width: 100%; 
+}
+
+.route-line { width: 1px; height: 20px; background: #444; margin: 0 0 0 7px; }
+
+.ride-category { margin-top: 25px; }
+.label { 
+    font-size: 0.7rem; color: #888; margin-bottom: 12px; 
+    text-transform: uppercase; letter-spacing: 1.5px; 
+}
+
+.driver-selection-grid { max-height: 200px; overflow-y: auto; margin-bottom: 15px; }
+
+/* --- MAIN VIEW (Map & History) --- */
+.map-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height for desktop */
+    width: 100%;
+    background: #0a0b0d;
+    overflow: auto; /* Changed from hidden */
+}
+
+/* Tracker Zone (Top 20%) */
+.tracker-zone {
+    flex: 0 0 auto; /* Remove fixed 140px height */
+    background: rgba(241, 158, 57, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px 40px;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+    color: white;
+}
+
+#arrival-timer { margin-left: auto; color: var(--primary); font-weight: bold; }
+
+.animation-track {
+    position: relative;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.car-container {
+    position: absolute;
+    top: -14px;
+    left: var(--car-progress);
+    font-size: 22px;
+    color: var(--primary);
+    transition: left 1s linear;
+}
+
+/* --- HISTORY TABLE --- */
+.history-zone {
+    flex: 1;
+    padding: 30px 40px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-header h3 { color: white; font-size: 1.2rem; }
+
+.table-container {
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+.history-table thead tr {
+    background: rgba(241, 158, 57, 0.08);
+}
+
+.history-table th {
+    padding: 15px 20px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+}
+
+.history-table td {
+    padding: 15px 20px;
+    color: #ccc;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    white-space: nowrap;
+}
+
+.history-table td:nth-child(4) {
+    white-space: normal;
+    min-width: 180px;
+}
+
+.history-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-cell { font-weight: bold; }
+
+/* --- BUTTONS & ACTIONS --- */
+.confirm-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: black;
+    border: none;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.confirm-btn:hover {
+    background: #00d2da;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+}
+
+.edit-profile-btn {
+    background: rgba(241, 158, 57, 0.1);
+    border: 1px solid rgba(241, 158, 57, 0.3);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.settings-btn, .logout-link {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.settings-btn { background: rgba(255,255,255,0.05); color: white; margin-bottom: 10px; }
+.settings-btn:hover { background: var(--primary); color: black; }
+
+.logout-link { background: none; color: var(--danger); }
+.logout-link:hover { background: rgba(255, 71, 87, 0.1); }
+
+/* --- CUSTOM POPUP ANIMATION --- */
+#custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--primary);
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 100000;
+    min-width: 300px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#alert-progress-bar {
+    height: 3px;
+    background: var(--primary);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+}
+
+/* --- RESPONSIVE: MOBILE --- */
+@media (max-width: 900px) {
+    
+    .dash-container {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    
+    .side-panel {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .map-view { height: auto; overflow: visible; }
+    
+    .tracker-zone { padding: 20px; }
+    
+    .history-zone { padding: 20px; height: 500px; }
+    
+    .history-table th, .history-table td {
+        padding: 12px 10px;
+        font-size: 0.8rem;
+    }
+    .user-profile {
+        margin-bottom: 15px;
+        width: fit-content;
+    }
+    
+    .avatar-circle {
+        width: 48px;
+        height: 48px;
+    }
+    .u-status{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}

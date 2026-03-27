@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoRïde | Root Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./project-css/admin.css">
+</head>
+<body>
+
+<div id="admin-dashboard" class="admin-wrapper">
+    <aside class="admin-sidebar">
+        <div class="admin-brand">Go<span>Rïde</span> <small>Control Center</small></div>
+        
+        <nav class="admin-nav">
+            <a href="#" class="nav-item active"><i class="fas fa-chart-line"></i> Overview</a>
+            <a href="#" class="nav-item"><i class="fas fa-users"></i> User Registry</a>
+            <a href="#" class="nav-item"><i class="fas fa-car"></i> Fleet Status</a>
+            <a href="#" class="nav-item"><i class="fas fa-wallet"></i> Transactions</a>
+            <a href="#" class="nav-item"><i class="fas fa-shield-alt"></i> Security Logs</a>
+        </nav>
+        
+        <div class="admin-user-profile">
+            <div class="avatar-wrapper">
+                <img src="https://ui-avatars.com/api/?name=Admin+Heritage&background=ff9f43&color=fff" alt="Admin">
+                <span class="status-dot"></span>
+            </div>
+            <div class="admin-info">
+                <p>Heritage</p>
+                <span>Root Access</span>
+            </div>
+            <button class="admin-logout-btn" title="Logout"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search ID, names, or vehicle plates...">
+            </div>
+            <div class="header-actions">
+                <div class="system-time" id="live-clock">14:05:48 PM</div>
+                <button class="notif-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge"></span>
+                </button>
+            </div>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-data">
+                    <h3>Total Users</h3>
+                    <p class="number">1,284</p>
+                    <span class="trend up"><i class="fas fa-arrow-up"></i> 12.5%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-route"></i></div>
+                <div class="stat-data">
+                    <h3>Total Rides</h3>
+                    <p class="number">8,432</p>
+                    <span class="trend up"><i class="fas fa-arrow-up"></i> 5.2%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fas fa-naira-sign"></i></div>
+                <div class="stat-data">
+                    <h3>Revenue</h3>
+                    <p class="number">₦4.2M</p>
+                    <span class="trend down"><i class="fas fa-arrow-down"></i> 2.1%</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="admin-workspace">
+            <div class="table-container-admin">
+                <div class="table-header">
+                    <h3>User Management</h3>
+                    <button class="export-btn"><i class="fas fa-file-export"></i> Export CSV</button>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Identity</th>
+                            <th>Account Role</th>
+                            <th>Status</th>
+                            <th>Management</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-user-list">
+                        <tr>
+                            <td class="id-cell">#GR-901</td>
+                            <td class="name-cell">Heritage Joe</td>
+                            <td><span class="role-tag passenger">Passenger</span></td>
+                            <td><span class="status-tag online">Online</span></td>
+                            <td class="action-cell">
+                                <button class="action-btn" tabindex="0">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                    <div class="action-dropdown">
+                                        <a href="#" class="drop-item"><i class="fas fa-user-pen"></i> Edit Profile</a>
+                                        <a href="#" class="drop-item ban"><i class="fas fa-user-slash"></i> Ban Account</a>
+                                        <a href="#" class="drop-item delete"><i class="fas fa-user-xmark"></i> Terminate</a>
+                                    </div>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <aside class="status-panel">
+                <h3>System Health</h3>
+                <div class="health-item">
+                    <div class="health-label"><span>Firebase Auth</span> <span>98%</span></div>
+                    <div class="health-bar"><div class="fill green" style="width: 98%"></div></div>
+                </div>
+                <div class="health-item">
+                    <div class="health-label"><span>RTDB Latency</span> <span>45ms</span></div>
+                    <div class="health-bar"><div class="fill blue" style="width: 45%"></div></div>
+                </div>
+                <div class="health-item">
+                    <div class="health-label"><span>API Gateway</span> <span>Stable</span></div>
+                    <div class="health-bar"><div class="fill purple" style="width: 70%"></div></div>
+                </div>
+            </aside>
+        </div>
+    </main>
+</div>
+
+<script src="./project-js/admin.js"></script>
+</body>
+</html>

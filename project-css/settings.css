@@ -1,0 +1,146 @@
+#settings-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-bg);
+}
+
+.settings-card {
+    width: 100%;
+    max-width: 500px;
+    height: 90vh;
+    background: #1a1d21;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.settings-header {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.settings-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 25px;
+}
+
+.settings-section {
+    margin-bottom: 30px;
+}
+
+.settings-section h4 {
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Setting Item with Toggle */
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.setting-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.setting-info i { color: #888; font-size: 1.1rem; }
+.setting-info span { display: block; font-size: 0.95rem; }
+.setting-info p { font-size: 0.75rem; color: #666; margin: 0; }
+
+/* The Switch (Toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--primary); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Menu Action Buttons */
+.menu-action-btn {
+    width: 100%;
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    color: #ccc;
+    cursor: pointer;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.02);
+}
+
+.menu-action-btn i:first-child { color: #888; width: 20px; }
+.menu-action-btn span { flex: 1; text-align: left; font-size: 0.95rem; }
+
+/* Danger Zone */
+.danger-zone {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 20px;
+}
+
+.delete-account-btn {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 71, 87, 0.1);
+    border: 1px solid rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.settings-footer {
+    padding: 20px 25px;
+    background: #151719;
+}
+
+/* Mobile full-screen */
+@media (max-width: 600px) {
+    .settings-card { height: 100dvh; border-radius: 0; }
+}
+
+
+.menu-action-btn:hover{
+    background-color: var(--primary);
+    color: black;
+}
+.confirm-btn:hover{
+    background-color: rgb(0, 119, 119);
+}

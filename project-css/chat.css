@@ -1,0 +1,222 @@
+:root {
+    --chat-bg: #0f1113;
+    --incoming-msg: #1a1d21;
+    --outgoing-msg: var(--primary); /* Using your orange theme color */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--chat-bg);
+    border-left: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Header */
+.chat-header {
+    padding: 15px 20px;
+    background: #16181b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.user-info { display: flex; align-items: center; gap: 12px; }
+.avatar-wrapper { position: relative; }
+.avatar-wrapper img { border-radius: 50%; width: 50px; height: 45px; object-fit: cover; }
+.status-indicator { 
+    position: absolute; bottom: 2px; right: 2px; 
+    width: 12px; height: 12px; border-radius: 50%; border: 2px solid #16181b; 
+}
+.status-indicator.online { background: #2ecc71; }
+
+.user-info h4 { color: white; font-size: 1rem; margin-bottom: 2px; }
+.user-info p { color: #888; font-size: 0.75rem; }
+
+/* Messages */
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message { max-width: 80%; display: flex; flex-direction: column; }
+.message.incoming { align-self: flex-start; }
+.message.outgoing { align-self: flex-end; align-items: flex-end; }
+
+.bubble {
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.incoming .bubble {
+    background: var(--incoming-msg);
+    color: #eee;
+    border-bottom-left-radius: 4px;
+}
+
+.outgoing .bubble {
+    background: var(--primary);
+    color: #000;
+    font-weight: 500;
+    border-bottom-right-radius: 4px;
+}
+
+.time { font-size: 0.7rem; color: #555; margin-top: 5px; }
+.system { align-self: center; text-align: center; color: #555; font-size: 0.8rem; }
+
+/* Footer */
+.chat-footer {
+    padding: 15px;
+    background: #16181b;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.quick-replies {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+}
+
+.quick-replies::-webkit-scrollbar { display: none; }
+
+.quick-replies button {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #ccc;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #0f1113;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.input-wrapper input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 10px;
+    outline: none;
+}
+
+.icon-btn, .attach-btn, .send-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.send-btn {
+    background: var(--primary);
+    color: black;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+.avatar-wrapper{
+    border: solid 2px #00f2fe;
+    border-radius: 50%;
+}
+.send-btn{
+    display: flex; justify-content: center; align-items: center;
+}
+.send-btn:hover{
+    background-color: lime;
+    transform: scale(0.9);
+}
+.icon-btn:hover{
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+.chat-container {
+    /* Position fixed to sit on top of everything */
+    position: fixed; 
+    top: 0;
+    right: 0;
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* Size constraints */
+    height: 100vh; /* Slightly less than 100vh to look like a floating app */
+    width: 100%;   /* Responsive width */
+    max-width: 500px;
+    
+    background: var(--chat-bg);
+    border: 1px solid rgba(255, 159, 67, 0.2); /* Added subtle primary border */
+    border-radius: 20px; /* Rounded corners for modern look */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8); /* Deep shadow to separate from dashboard */
+    
+    z-index: 10001; /* Higher than your dashboard and alert overlay */
+    overflow: auto; /* Keeps corners rounded */
+}
+
+/* Optional: Darken the background behind the chat */
+.chat-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px); /* Blurs the dashboard behind the chat */
+    z-index: 10000;
+}
+
+.chat-initials-avatar {
+    width: 45px;
+    height: 45px;
+    background: #16181b; /* Matches your header bg */
+    border: 2px solid #00f2fe; /* Your GoRïde Aqua color */
+    color: #00f2fe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+/* Ensure the wrapper doesn't squish the circle */
+.avatar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
