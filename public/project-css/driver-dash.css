@@ -248,4 +248,16 @@
     .gr-stats-row {
         grid-template-columns: 1fr;
     }
+     .gr-dash-container {
+        width: 100%; /* instead of 100vw */
+    }
+
+    .gr-viewport {
+        padding: 1rem; /* reduce padding */
+    }
+
+    .gr-request-table {
+        min-width: 0; /* allow table to shrink */
+    }
 }
+

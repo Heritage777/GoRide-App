@@ -1,0 +1,434 @@
+/* GoRïde Root Admin - Cyber Noir Master Stylesheet 
+    Unified Version: Supports Dashboard, Custom Alerts, and Dynamic Prompts
+*/
+
+:root {
+    --gr-primary: #00f2fe; /* Aqua Neon */
+    --gr-primary-glow: rgba(0, 242, 254, 0.4);
+    --gr-bg: #080a0c;
+    --gr-sidebar: #0f1114;
+    --gr-card: rgba(26, 29, 33, 0.7);
+    --gr-border: rgba(255, 255, 255, 0.06);
+    --gr-text: #ffffff;
+    --gr-text-dim: #94a3b8;
+    --gr-success: #10b981;
+    --gr-danger: #f43f5e;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+
+body { 
+    background-color: var(--gr-bg); 
+    color: var(--gr-text); 
+    overflow-x: hidden; 
+}
+
+/* --- Layout Structure --- */
+.admin-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.admin-sidebar {
+    width: 280px;
+    background: var(--gr-sidebar);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--gr-border);
+}
+
+.admin-brand {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.admin-brand span { 
+    color: var(--gr-primary); 
+    text-shadow: 0 0 15px var(--gr-primary-glow); 
+}
+
+.admin-brand small { 
+    font-size: 0.65rem; 
+    color: var(--gr-text-dim); 
+    display: block; 
+    letter-spacing: 2px; 
+    margin-top: 5px; 
+    text-transform: uppercase;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 20px;
+    color: var(--gr-text-dim);
+    text-decoration: none;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item.active, .nav-item:hover {
+    background: linear-gradient(90deg, rgba(0, 242, 254, 0.1) 0%, transparent 100%);
+    color: var(--gr-primary);
+    transform: translateX(5px);
+}
+
+/* --- Header & Search --- */
+.admin-main {
+    flex: 1;
+    padding: 40px;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    background: var(--gr-card);
+    padding: 12px 25px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 450px;
+    border: 1px solid var(--gr-border);
+    transition: 0.3s;
+}
+
+.search-bar:focus-within {
+    border-color: var(--gr-primary);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+}
+
+.search-bar input { 
+    background: transparent; 
+    border: none; 
+    color: #fff; 
+    width: 100%; 
+    outline: none; 
+}
+
+.system-time {
+    color: var(--gr-primary);
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* --- Stats Grid --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--gr-card);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid var(--gr-border);
+    transition: 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.stat-card:hover { 
+    border-color: var(--gr-primary); 
+    transform: translateY(-5px); 
+}
+
+.stat-icon { 
+    font-size: 1.8rem; 
+    color: var(--gr-primary); 
+    margin-bottom: 20px; 
+}
+
+.number { 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+}
+
+/* --- Table & Workspace --- */
+.table-container-admin {
+    background: var(--gr-card);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid var(--gr-border);
+}
+
+.admin-table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+.admin-table th { 
+    text-align: left; 
+    padding: 15px; 
+    font-size: 0.75rem; 
+    color: var(--gr-text-dim); 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--gr-border);
+}
+
+.admin-table td { 
+    padding: 20px 15px; 
+    font-size: 0.95rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.02); 
+}
+
+/* --- Actions Dropdown --- */
+.action-cell { position: relative; }
+
+.action-btn {
+    background: rgba(255,255,255,0.05);
+    border: none; 
+    color: var(--gr-text-dim);
+    width: 35px; 
+    height: 35px; 
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    background: var(--gr-primary);
+    color: #000;
+}
+
+.action-dropdown {
+    position: absolute; 
+    right: 0; 
+    top: 45px;
+    width: 170px; 
+    background: #1a1d21; 
+    border: 1px solid var(--gr-primary);
+    border-radius: 14px; 
+    z-index: 1000;
+    display: none; 
+    flex-direction: column;
+    overflow: hidden; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.action-dropdown.show { display: flex; }
+
+.drop-item {
+    padding: 14px 20px; 
+    color: var(--gr-text-dim);
+    text-decoration: none; 
+    font-size: 0.85rem;
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.drop-item:hover { 
+    background: rgba(0, 242, 254, 0.1); 
+    color: var(--gr-primary); 
+}
+
+.drop-item.delete:hover { 
+    color: var(--gr-danger); 
+    background: rgba(244, 63, 94, 0.1); 
+}
+
+/* --- Custom Alert (Slide-In) --- */
+.alert-overlay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+}
+
+.alert-card {
+    background: #1a1d21;
+    min-width: 320px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    border: 1px solid var(--gr-border);
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.alert-icon-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--gr-success);
+}
+
+.alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.05);
+}
+
+#alert-progress-bar {
+    height: 100%;
+    width: 100%;
+    background: var(--gr-primary);
+    transition: width 3s linear;
+}
+
+/* --- Custom Prompt (Overlay) --- */
+.prompt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.prompt-card {
+    background: #1a1d21;
+    width: 400px;
+    padding: 40px;
+    border-radius: 28px;
+    text-align: center;
+    border: 1px solid var(--gr-border);
+}
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--gr-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+}
+
+.primary-confirm-btn {
+    background: var(--gr-primary);
+    color: #000;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.secondary-btn {
+    background: #25282c;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* --- Utility Classes --- */
+.hidden { display: none !important; }
+
+.role-tag {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-tag.admin { background: rgba(0, 242, 254, 0.1); color: var(--gr-primary); }
+.role-tag.passenger { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+
+.status-tag.online { color: var(--gr-success); display: flex; align-items: center; gap: 8px; }
+.status-tag.online::before { content: ''; width: 8px; height: 8px; background: var(--gr-success); border-radius: 50%; }
+
+
+
+
+
+/* --- Optimized Alert Animation --- */
+.alert-overlay {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 10000;
+    pointer-events: none; /* Crucial: clicks pass through to dashboard */
+}
+
+.alert-card {
+    pointer-events: all; /* Clicks work on the alert itself */
+    background: #1a1d21;
+    min-width: 320px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    position: relative;
+    overflow: hidden;
+    /* This triggers when the 'hidden' class is removed */
+    animation: slideInAlert 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideInAlert {
+    from { 
+        transform: translateX(120%); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+.alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.05);
+}
+
+#alert-progress-bar {
+    height: 100%;
+    background: var(--gr-primary); /* Your Aqua color */
+    box-shadow: 0 0 10px var(--gr-primary);
+}

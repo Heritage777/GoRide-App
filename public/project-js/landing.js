@@ -61,6 +61,8 @@ let support = document.getElementById('support-master-container')
 let driverRegistration = document.getElementById('driverRegistration')
 let wallet = document.getElementById('wallet-page')
 let rideHistory = document.getElementById('rideHistoryPage')
+let adminDashboard = document.getElementById('admin-dashboard');
+
 
 
 
@@ -82,6 +84,7 @@ support.style.display = 'none'
 driverRegistration.style.display = 'none'
 wallet.style.display = 'none'
 rideHistory.style.display = 'none'
+adminDashboard.style.display = 'none'
 
 function removeCurrentDisplay(currentPage) {
     currentPage.style.display = 'none'
@@ -166,7 +169,7 @@ function submitApplication() {
 
 
 
-// displayPage(settings)
+// displayPage(adminDashboard)
 
 // function displayHistory() {
 //     removeCurrentDisplay(driverDashboard)
@@ -244,6 +247,15 @@ function displayHistory() {
 
 
 
+
+
+
+
+
+// function displayAdminDashboard() {
+//     removeCurrentDisplay(loginPage)
+//     displayPage(adminDashboard)
+// }
 
 
 
